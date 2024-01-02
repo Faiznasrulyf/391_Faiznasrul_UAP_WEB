@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAP WEB</title>
+</head>
+
+
+<body>
+
+    <h1>
+        KASIR SEDERHANA
+    </h1>
+    
+   <table border="1">
+
+    <thead>
+        <tr>
+            <th> KODE </th>
+            <th> NAMA BARANG </th>
+            <th> HARGA </th>
+        </tr>
+    </thead>
+    <tbody>
+        <th>001</th>
+        <th> A</th>
+        <th>10.000</th>
+    </tbody>
+
+    <tbody>
+        <th>002</th>
+        <th> B</th>
+        <th>20.000</th>
+    </tbody>
+
+    <tbody>
+        <th>003</th>
+        <th> C</th>
+        <th>30.000</th>
+    </tbody>
+
+   </table>
+    <tbody>
+</table>
+
+<p></p>
+<table border="1">
+    <h1> Inputan User</h1>
+    <thead>
+        <tr>
+            <td>Masukan Code</td>
+            <td>:</td>
+            <td><input type="text" id="angka1"></td>
+        </tr>
+        <tr>
+            <td>Banyaknya Barang</td>
+            <td>:</td>
+            <td><input type="text" id="angka2"></td>
+        </tr>
+        <tr>
+            <td> <button onclick="Tambah()">submit</button></td>
+            
+        </tr>
+    </thead>
+
+</table>
+
+</body>
+
+<script>
+    const barang = {
+        "001": { nama: "A", harga: 10000},
+        "002": { nama: "B", harga: 20000},
+        "003": { nama: "C", harga: 30000}
+    };
+
+
+    function Tambah(){
+        let kodeBarang = document.getElementById("angka1").value;
+        let banyakBarang = document.getElementById("angka2").value;
+   
+        if(barang.hasOwnProperty(kodeBarang)){
+            let hargaBarang = barang[kodeBarang].harga;
+            let total = banyakBarang * hargaBarang;
+            alert(jumlah = prompt("total pembayaran adalah : " +total));
+
+            let jumlah = prompt("masukan uang");
+            let kembali = jumlah - total;
+            alert("kembalian :" + kembali);
+        }
+   
+   
+    }
+    
+</script>
+</html>
